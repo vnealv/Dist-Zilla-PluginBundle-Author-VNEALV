@@ -6,21 +6,21 @@ use warnings;
 
 our $VERSION = 0.001;
 our $AUTHORITY = 'cpan:VNEALV'; # AUTHORITY
- 
+
 =head1 NAME
- 
+
 Dist::Zilla::PluginBundle::Author::VNEALV - yet another plugin bundle for Dist::Zilla
- 
+
 =head1 DESCRIPTION
- 
+
 See L<https://metacpan.org/author/VNEALV> for modules which may possibly use this.
- 
+
 =cut
- 
+
 use Dist::Zilla::Util;
 use Moose;
 use Perl::Version;
- 
+
 has max_target_perl => (
     is      => 'ro',
     isa     => 'Str',
@@ -30,7 +30,7 @@ has max_target_perl => (
         $self->payload->{'Test::MinimumVersion.max_target_perl'} // $self->payload->{max_target_perl} // '5.14.0';
     },
 );
- 
+
 has authority => (
     is      => 'ro',
     isa     => 'Str',
@@ -47,10 +47,10 @@ has installer => (
     lazy    => 1,
     default => sub { shift->payload->{installer} // 'MakeMaker' },
 );
- 
+
 sub configure {
     my $self = shift;
- 
+
     my @copy_from_build     = qw(LICENSE Makefile.PL);
     my @gather_exclude      = (@copy_from_build, qw(README.md));
     my @no_index            = qw(eg share shares t xt);
@@ -103,7 +103,7 @@ my @plugins = (
         ['ReadmeAnyFromPod' => 'DistReadme' => {filename => 'README', location => 'build', type => 'text'}],
         ['Manifest'],
         ['ManifestSkip'],
- 
+
         $self->installer,     # e.g. MakeMaker
         ['NextRelease'],
         ['CheckChangesHasContent'],
@@ -117,35 +117,35 @@ my @plugins = (
         ['ArchiveRelease' => { directory => '/home/nael/repos/CPAN-Archive' } ],
         ['Git::Push' => {push_to => 'github master +master:refs/heads/release +dist', remotes_must_exist => 0}],
     );
- 
+
     $self->add_plugins(@plugins);
 }
- 
+
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 with 'Dist::Zilla::Role::PluginBundle::PluginRemover';
 with 'Dist::Zilla::Role::PluginBundle::Config::Slicer';
- 
+
 __PACKAGE__->meta->make_immutable;
- 
+
 1;
- 
+
 =head1 AUTHOR
- 
+
 Nael Alolwani C<< <VNEALV@cpan.org> >>, but structure mostly taken from other plugin bundles such as:
- 
+
 =over 4
- 
+
 =item * L<Dist::Zilla::PluginBundle::Author::TEAM>
 
 =item * L<Dist::Zilla::PluginBundle::Author::OALDERS>
 
 =item * L<Dist::Zilla::PluginBundle::Author::ETHER>
- 
+
 =item * L<Dist::Zilla::Plugin::Author::Plicease>
- 
+
 =back
- 
+
 =head1 LICENSE
- 
+
 Copyright Nael Alolwani 2021. Licensed under the same terms as Perl itself.
- 
+
