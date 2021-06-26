@@ -114,7 +114,7 @@ my @plugins = (
         ['Git::Commit' => {allow_dirty => [@allow_dirty], commit_msg => 'Release %N %v%t%n%n%c'}],
         ['Git::CommitBuild' => {branch => '', release_branch => 'dist', release_message => 'Version %v%t'}],
         ['Git::Tag' => {tag_message => 'Tag v%v for CPAN release'}],
-        ['ArchiveRelease' => { directory => '/home/nael/repos/CPAN-Archive' } ],
+        ['ArchiveRelease' => { directory => '/repos/CPAN-Archive' } ],
         ['Git::Push' => {push_to => 'github master +master:refs/heads/release +dist', remotes_must_exist => 0}],
     );
 
