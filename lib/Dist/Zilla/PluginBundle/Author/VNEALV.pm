@@ -4,8 +4,8 @@ package Dist::Zilla::PluginBundle::Author::VNEALV;
 use strict;
 use warnings;
 
-# VERSION
-# AUTHORITY
+our $VERSION = 0.001;
+our $AUTHORITY = 'cpan:VNEALV'; # AUTHORITY
  
 =head1 NAME
  
@@ -147,5 +147,5 @@ Nael Alolwani C<< <VNEALV@cpan.org> >>, but structure mostly taken from other pl
  
 =head1 LICENSE
  
-Copyright Tom Molesworth 2019. Licensed under the same terms as Perl itself.
+Copyright Nael Alolwani 2021. Licensed under the same terms as Perl itself.
  
