@@ -4,7 +4,7 @@ package Dist::Zilla::PluginBundle::Author::VNEALV;
 use strict;
 use warnings;
 
-our $VERSION = 0.001;
+our $VERSION = 0.002;
 our $AUTHORITY = 'cpan:VNEALV'; # AUTHORITY
 
 =head1 NAME
