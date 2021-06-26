@@ -81,17 +81,16 @@ my %WriteMakefileArgs = (
     "Perl::Version" => 0,
     "Test::CPAN::Meta" => 0,
     "Test::CPANfile" => 0,
-    "Test::CheckDeps" => "0.010"
+    "Test::CheckDeps" => 0
   },
   "TEST_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
-    "Test::CheckDeps" => "0.010",
-    "Test::More" => "0.94"
+    "Test::More" => 0
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.001",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -167,8 +166,8 @@ my %FallbackPrereqs = (
   "Perl::Version" => 0,
   "Test::CPAN::Meta" => 0,
   "Test::CPANfile" => 0,
-  "Test::CheckDeps" => "0.010",
-  "Test::More" => "0.94"
+  "Test::CheckDeps" => 0,
+  "Test::More" => 0
 );
 
 
